@@ -1,0 +1,69 @@
+.skills-container {
+  width: 100%;
+  min-height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 60vh;
+}
+
+.skill-icon {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  animation: float 6s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.skill-icon:hover {
+  transform: translateY(-10px);
+}
+
+.skill-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Create floating animation for icons */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Add random animation delays */
+.skill-icon:nth-child(2n) {
+  animation-delay: 1s;
+}
+
+.skill-icon:nth-child(3n) {
+  animation-delay: 2s;
+}
+
+.skill-icon:nth-child(4n) {
+  animation-delay: 3s;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+  }
+} 

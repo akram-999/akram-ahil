@@ -1,69 +1,85 @@
-.skills-container {
+.skills-section {
   width: 100%;
-  min-height: 60vh;
-  position: relative;
+  background-color: #0a0a0a;
+  padding: 2rem 0;
   overflow: hidden;
 }
 
-.skills-wrapper {
+.skills-container {
+  width: 100%;
+  overflow: hidden;
   position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 60vh;
 }
 
-.skill-icon {
-  width: 70px;
-  height: 70px;
-  background: white;
-  border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  animation: float 6s ease-in-out infinite;
-  cursor: pointer;
+.skills-track {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
 }
 
-.skill-icon:hover {
-  transform: translateY(-10px);
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  
+  text-align: center;
+  background: #1a1a1a;
+  border-radius: 9999px;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
 }
 
-.skill-icon img {
-  width: 100%;
-  height: 100%;
+.skill-item:hover {
+  transform: translateY(-5px);
+  background: #262626;
+  border-color: #404040;
+}
+
+.skill-item img {
+  width: 24px;
+  height: 24px;
   object-fit: contain;
 }
 
-/* Create floating animation for icons */
-@keyframes float {
+.skill-item span {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@keyframes scroll {
   0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
+    transform: translateX(0);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateX(-50%);
   }
 }
 
-/* Add random animation delays */
-.skill-icon:nth-child(2n) {
-  animation-delay: 1s;
-}
-
-.skill-icon:nth-child(3n) {
-  animation-delay: 2s;
-}
-
-.skill-icon:nth-child(4n) {
-  animation-delay: 3s;
+/* Pause animation on hover */
+.skills-container:hover .skills-track {
+  animation-play-state: paused;
 }
 
 /* Make it responsive */
 @media (max-width: 768px) {
-  .skill-icon {
-    width: 40px;
-    height: 40px;
+  .skills-track {
+    animation-duration: 20s;
+  }
+  
+  .skill-item {
+    padding: 0.375rem 1rem;
+  }
+  
+  .skill-item img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .skill-item span {
+    font-size: 0.75rem;
   }
 } 

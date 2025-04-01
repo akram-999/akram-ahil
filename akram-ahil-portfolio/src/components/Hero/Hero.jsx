@@ -1,50 +1,50 @@
-import { MoveRight, PhoneCall } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { MoveRight } from "lucide-react";
 import Image from "next/image";
-import { Mail } from "lucide-react"
+import './Hero.css';
 
 export default function Hero() {
   return (
-    <div className="mx-20 py-20 lg:py-40">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 gap-8 items-center lg:grid-cols-2">
-            <div className="flex gap-4 flex-col">
-              <div>
-                <Badge className='text-md' variant="outline ">HELLO WORLD 👋</Badge>
-              </div>
-              <div className="flex gap-4 flex-col">
-                <h1
-                  className="text-5xl md:text-8xl max-w-lg tracking-tighter text-left font-regular">
-                  Akram Ahil
-                </h1>
-                <p
-                  className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
-                  Je suis développeur Web Full Stack junior, spécialisé dans la stack MERN, ainsi que dans HTML, CSS et Tailwind CSS,
-                   Next.js et JWT. J'ai également une expérience significative sur WordPress. Passionné par le développement et la technologie
-                </p>
-              </div>
-              <div className="flex flex-row gap-4">
-              <Button size="lg" className="gap-4">
-                  About me <MoveRight className="w-4 h-4" />
-                </Button>
-                <Button size="lg" className="gap-4" variant="outline">
-                  Contact me <Mail />
-                </Button>
-                
-              </div>
+    <div className="min-h-screen bg-black px-4 sm:px-8 lg:px-16 py-20">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left side - Image with circular overlay */}
+          <div className="relative">
+            <div className="relative w-[400px] h-[400px] mx-auto">
+              <Image
+                src="/IMG.jpg"
+                alt="Profile"
+                width={400}
+                height={400}
+                className="rounded-full object-cover"
+              />
+              {/* Rotating circle overlay */}
+              
             </div>
-            <div className="bg-muted rounded-md aspect-square w-4/5 text-center items-center ">
-                
-                <Image
-              src="/IMG.jpg"
-              alt="startup template"
-              width={580}
-              height={300}
-             />
-            </div>
+          </div>
+
+          {/* Right side - Text content */}
+          <div className="space-y-6">
+            <h1 className="text-white space-y-2">
+              <span className="block text-6xl font-light">A</span>
+              <span className="block text-7xl font-light">
+                <span className="text-[#9FE870]">creative developer</span>
+              </span>
+              <span className="block text-7xl font-light">& digital designer</span>
+            </h1>
+            
+            <p className="text-gray-400 text-lg max-w-xl">
+              I collaborate with brands globally to design impactful, mission-focused 
+              websites that drive results and achieve business goals.
+            </p>
+
+            <button className="bg-white text-black px-8 py-3 rounded-full 
+              hover:bg-[#9FE870] transition-all duration-300 flex items-center gap-2">
+              My Resume
+              <MoveRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </div>
-  )
+    </div>
+  );
 }

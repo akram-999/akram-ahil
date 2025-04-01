@@ -1,0 +1,67 @@
+.service-item {
+  background: #111111;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  color: white;
+}
+
+.service-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.service-item.active {
+  background: #1A1A1A;
+}
+
+.service-item.active .service-content {
+  max-height: 200px;
+  padding-bottom: 1.5rem;
+}
+
+.service-item:hover {
+  background: #1A1A1A;
+}
+
+/* Animation for the chevron */
+.service-header svg {
+  transition: transform 0.3s ease;
+}
+
+.service-item.active .service-header svg {
+  transform: rotate(180deg);
+}
+
+/* Fade in animation for content */
+.service-item.active .service-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .services-section {
+    padding: 2rem 1rem;
+  }
+} 

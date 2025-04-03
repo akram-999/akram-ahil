@@ -34,16 +34,16 @@
   flex: 0 0 350px;
   margin: 0 1rem;
   padding: 1.5rem;
-  background: #1f2937a2; /* Dark card background */
+  background: #3e404368; /* Dark card background */
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
-  border: 1px solid #374151; /* Subtle border */
+  border: 1px solid #373d47a4; /* Subtle border */
 }
 
 .testimonial-card:hover {
   transform: translateY(-5px);
-  background: #2d3748; /* Slightly lighter on hover */
+  background: #3b3f457b; /* Slightly lighter on hover */
 }
 
 .author-info {

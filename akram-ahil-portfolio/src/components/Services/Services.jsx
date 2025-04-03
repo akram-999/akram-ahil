@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp, Code, Palette, Layers } from "lucide-react";
+import { ChevronDown ,Code, Palette, Layers } from "lucide-react";
 import "./Services.css";
 
 
@@ -56,11 +56,11 @@ export default function Services() {
                     {service.icon}
                     <span className="text-xl">{service.title}</span>
                   </div>
-                  {activeService === service.id ? (
-                    <ChevronUp className="w-5 h-5" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5" />
-                  )}
+                  <div className="rot">
+                  <ChevronDown className="w-5 h-5" />
+                  </div>
+                  
+                 
                 </div>
                 <div className="service-content">
                   <p className="text-gray-400">{service.description}</p>

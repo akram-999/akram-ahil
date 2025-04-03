@@ -35,11 +35,11 @@
 }
 
 /* Animation for the chevron */
-.service-header svg {
+.service-header .rot {
   transition: transform 0.3s ease;
 }
 
-.service-item.active .service-header svg {
+.service-item.active .service-header .rot {
   transform: rotate(180deg);
 }
 

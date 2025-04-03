@@ -22,9 +22,7 @@ export default function Skils() {
     { name: 'html', icon: '/skils/html5.svg'},
     { name: 'ansible', icon: '/skils/ansible.svg'},
     { name: 'figma', icon: '/skils/figma.svg'},
-    // Add more skills as needed
-
-    // Add any other skills you want to show
+    
   ]
 
   return (
@@ -37,13 +35,13 @@ export default function Skils() {
               <span>{skill.name}</span>
             </div>
           ))}
-          {/* Duplicate items for seamless loop */}
-          {skills.map((skill, index) => (
+          
+          {/* {skills.map((skill, index) => (
             <div key={`duplicate-${index}`} className="skill-item">
               <img src={skill.icon} alt={skill.name} />
               <span>{skill.name}</span>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </section>

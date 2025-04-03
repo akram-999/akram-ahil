@@ -25,8 +25,9 @@ export default function Hero() {
           {/* Right side - Text content */}
           <div className="space-y-6">
             <h1 className="text-white space-y-2">
-              <span className="block text-6xl font-light">A</span>
-              <span className="block text-7xl font-light">
+              
+              <span className="flex text-7xl font-light ">
+                <span className="block px-1 font-light">A</span>
                 <span className="text-[#9FE870]">creative developer</span>
               </span>
               <span className="block text-7xl font-light">& digital designer</span>

@@ -26,7 +26,7 @@ export default function Hero() {
           <div className="space-y-6">
           <div className="flex items-center gap-2 ">
           <span className="text-[#9FE870]">👋</span>
-          <span className="text-white text-xl">Hey! It's me Akram.</span>
+          <span className="text-white text-xl">Hey! It's me Akram Ahil.</span>
         </div>
 
             <h1 className="text-white space-y-2">
@@ -51,16 +51,16 @@ export default function Hero() {
 
             <div className="flex gap-6 pt-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                LINKEDIN <span className="text-xs">↗</span>
+                LINKEDIN <span className="text-lg">↗</span>
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                GITHUB <span className="text-xs">↗</span>
+                GITHUB <span className="text-lg">↗</span>
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                INSTAGRAM <span className="text-xs">↗</span>
+                INSTAGRAM <span className="text-lg">↗</span>
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                GMAIL <span className="text-xs">↗</span>
+                GMAIL <span className="text-lg">↗</span>
               </a>
             </div>
           </div>

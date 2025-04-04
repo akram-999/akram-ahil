@@ -1,6 +1,7 @@
 import React from 'react'
 import './Available.css'
 import { MoveRight } from 'lucide-react'
+import Link from "next/link"
 
 export default function Available() {
   return (
@@ -23,11 +24,13 @@ export default function Available() {
           </h2>
 
           {/* Contact button */}
-          <button className="contact-btn bg-white text-black px-8 py-3 rounded-full 
-            hover:bg-[#9FE870] transition-all duration-300 inline-flex items-center gap-2 ">
+          <Link href="/contact">
+          <button className=" bg-white text-black px-8 py-3 rounded-full 
+            hover:bg-[#9FE870] transition-all duration-300 inline-flex items-center gap-2 pointer">
             Contact Me
             
           </button>
+          </Link>
         </div>
       </div>
     </div>

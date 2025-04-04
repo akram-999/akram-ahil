@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Image with circular overlay */}
           <div className="relative">
-            <div className="relative w-[400px] h-[400px] mx-auto">
+            <div className="relative w-[400px] h-[400px] mx-auto mb-28">
               <Image
                 src="/IMG.jpg"
                 alt="Profile"
@@ -24,6 +24,11 @@ export default function Hero() {
 
           {/* Right side - Text content */}
           <div className="space-y-6">
+          <div className="flex items-center gap-2 ">
+          <span className="text-[#9FE870]">👋</span>
+          <span className="text-white text-xl">Hey! It's me Akram.</span>
+        </div>
+
             <h1 className="text-white space-y-2">
               
               <span className="flex text-7xl font-light ">
@@ -40,9 +45,24 @@ export default function Hero() {
 
             <button className="bg-white text-black px-8 py-3 rounded-full 
               hover:bg-[#9FE870] transition-all duration-300 flex items-center gap-2">
-              My Resume
-              <MoveRight className="w-5 h-5" />
+              $ npm install Resume
+              {/* <MoveRight className="w-5 h-5" /> */}
             </button>
+
+            <div className="flex gap-6 pt-4">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                LINKEDIN <span className="text-xs">↗</span>
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                GITHUB <span className="text-xs">↗</span>
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                INSTAGRAM <span className="text-xs">↗</span>
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                GMAIL <span className="text-xs">↗</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

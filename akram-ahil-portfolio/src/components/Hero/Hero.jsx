@@ -39,8 +39,8 @@ export default function Hero() {
             </h1>
             
             <p className="text-gray-400 text-lg max-w-xl">
-              I collaborate with brands globally to design impactful, mission-focused 
-              websites that drive results and achieve business goals.
+            I’m a Full Stack Developer skilled in React, Next.js, and the MERN stack, focused on building clean, responsive web apps.
+             I also design visuals using Photoshop and Illustrator, blending tech and creativity to deliver impactful digital experiences.
             </p>
 
             <button className="bg-white text-black px-8 py-3 rounded-full 

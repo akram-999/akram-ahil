@@ -36,12 +36,12 @@ export default function Skils() {
             </div>
           ))}
           
-          {/* {skills.map((skill, index) => (
+          {skills.map((skill, index) => (
             <div key={`duplicate-${index}`} className="skill-item">
               <img src={skill.icon} alt={skill.name} />
               <span>{skill.name}</span>
             </div>
-          ))} */}
+          ))}
         </div>
       </div>
     </section>

@@ -1,6 +1,52 @@
-import React from 'react'
+'use client';
+import React, { useState } from 'react';
 
-export default function page() {
+export default function Page() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({ type: 'success', message: 'Message sent successfully!' });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus({ type: 'error', message: data.error || 'Something went wrong' });
+      }
+    } catch (error) {
+      setStatus({ type: 'error', message: 'Failed to send message' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="m-28 bg-black text-white p-8 ">
       <div className="flex items-center gap-2 text-[#7DFA79]">
@@ -14,12 +60,22 @@ export default function page() {
       <div className="flex gap-16">
         {/* Contact Form */}
         <div className="flex-1">
-          <form className="space-y-8">
+          <form className="space-y-8" onSubmit={handleSubmit}>
+            {status.message && (
+              <div className={`p-4 rounded-lg ${status.type === 'success' ? 'bg-green-800/50 text-green-200' : 'bg-red-800/50 text-red-200'}`}>
+                {status.message}
+              </div>
+            )}
+            
             <div>
               <label className="block mb-2">Full Name</label>
               <input 
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full bg-transparent border border-gray-700 rounded-lg p-3"
+                required
               />
             </div>
             
@@ -27,22 +83,31 @@ export default function page() {
               <label className="block mb-2">Email</label>
               <input 
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full bg-transparent border border-gray-700 rounded-lg p-3"
+                required
               />
             </div>
             
             <div>
               <label className="block mb-2">Message</label>
               <textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full bg-transparent border border-gray-700 rounded-lg p-3 h-32"
+                required
               />
             </div>
             
             <button 
               type="submit"
-              className="bg-white text-black px-8 py-3 rounded-full font-medium"
+              disabled={isSubmitting}
+              className={`bg-white text-black px-8 py-3 rounded-full font-medium transition-opacity ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-90'}`}
             >
-              Submit
+              {isSubmitting ? 'Sending...' : 'Submit'}
             </button>
           </form>
         </div>

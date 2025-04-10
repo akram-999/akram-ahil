@@ -53,7 +53,7 @@ export default function Hero() {
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 LINKEDIN <span className="text-lg">↗</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/akram-999" className="text-gray-400 hover:text-white transition-colors">
                 GITHUB <span className="text-lg">↗</span>
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">

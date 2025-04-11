@@ -1,71 +1,220 @@
+'use client';
+
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import './Hero.css';
+import { motion } from "framer-motion";
 
 export default function Hero() {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut" }
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const imageAnimation = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        duration: 0.8, 
+        ease: "easeOut" 
+      } 
+    }
+  };
+
+  const socialLinkVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    },
+    hover: { 
+      scale: 1.1, 
+      color: "#ffffff",
+      transition: { duration: 0.2 }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black px-4 sm:px-8 lg:px-16 py-20">
-      <div className="container mx-auto">
+      <motion.div 
+        className="container mx-auto"
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Image with circular overlay */}
-          <div className="relative">
+          <motion.div 
+            className="relative"
+            variants={imageAnimation}
+          >
             <div className="relative w-[400px] h-[400px] mx-auto mb-28">
-              <Image
-                src="/IMG.jpg"
-                alt="Profile"
-                width={400}
-                height={400}
-                className="rounded-full object-cover"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
+                <Image
+                  src="/IMG.jpg"
+                  alt="Profile"
+                  width={400}
+                  height={400}
+                  className="rounded-full object-cover"
+                />
+              </motion.div>
+
+              {/* Rotating circle overlay - No styling changes */}
+              <motion.div 
+                className="absolute inset-0 border-2 border-[#9FE870] rounded-full"
+                initial={{ opacity: 0 }}
+                animate={{ 
+                  opacity: 0.7,
+                  rotate: 360 
+                }}
+                transition={{ 
+                  duration: 20, 
+                  repeat: Infinity,
+                  ease: "linear" 
+                }}
               />
-              {/* Rotating circle overlay */}
-              
             </div>
-          </div>
+          </motion.div>
 
           {/* Right side - Text content */}
-          <div className="space-y-6">
-          <div className="flex items-center gap-2 ">
-          <span className="text-[#9FE870]">👋</span>
-          <span className="text-white text-xl">Hey! It's me Akram Ahil.</span>
-        </div>
+          <motion.div 
+            className="space-y-6"
+            variants={staggerContainer}
+          >
+            <motion.div 
+              className="flex items-center gap-2"
+              variants={fadeInUp}
+            >
+              <motion.span 
+                className="text-[#9FE870]"
+                animate={{ 
+                  rotate: [0, 15, -15, 0],
+                  transition: { 
+                    duration: 1.5, 
+                    repeat: Infinity,
+                    repeatType: "mirror",
+                    ease: "easeInOut" 
+                  }
+                }}
+              >
+                👋
+              </motion.span>
+              <span className="text-white text-xl">Hey! It&apos;s me Akram Ahil.</span>
+            </motion.div>
 
-            <h1 className="text-white space-y-2">
-              
-              <span className="flex text-7xl font-light ">
-                
-                <span className="text-[#9FE870]">creative developer</span>
-              </span>
-              <span className="block text-7xl font-light">& digital designer</span>
-            </h1>
+            <motion.h1 className="text-white space-y-2" variants={staggerContainer}>
+              <motion.span 
+                className="flex text-7xl font-light"
+                variants={fadeInUp}
+              >
+                <motion.span 
+                  className="text-[#9FE870]"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  creative developer
+                </motion.span>
+              </motion.span>
+              <motion.span 
+                className="block text-7xl font-light"
+                variants={fadeInUp}
+                transition={{ delay: 0.7 }}
+              >
+                & digital designer
+              </motion.span>
+            </motion.h1>
             
-            <p className="text-gray-400 text-lg max-w-xl">
-            I’m a Full Stack Developer skilled in React, Next.js, and the MERN stack, focused on building clean, responsive web apps.
-             I also design visuals using Photoshop and Illustrator, blending tech and creativity to deliver impactful digital experiences.
-            </p>
+            <motion.p 
+              className="text-gray-400 text-lg max-w-xl"
+              variants={fadeInUp}
+              transition={{ delay: 0.8 }}
+            >
+              I&apos;m a Full Stack Developer skilled in React, Next.js, and the MERN stack, focused on building clean, responsive web apps.
+              I also design visuals using Photoshop and Illustrator, blending tech and creativity to deliver impactful digital experiences.
+            </motion.p>
 
-            <button className="bg-white text-black px-8 py-3 rounded-full 
-              hover:bg-[#9FE870] transition-all duration-300 flex items-center gap-2">
+            <motion.button 
+              className="bg-white text-black px-8 py-3 rounded-full 
+                hover:bg-[#9FE870] transition-all duration-300 flex items-center gap-2"
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              whileTap={{ scale: 0.95 }}
+            >
               $ npm install Resume
-              {/* <MoveRight className="w-5 h-5" /> */}
-            </button>
+              {/* <motion.span
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
+              >
+                <MoveRight className="w-5 h-5" />
+              </motion.span> */}
+            </motion.button>
 
-            <div className="flex gap-6 pt-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <motion.div 
+              className="flex gap-6 pt-4"
+              variants={staggerContainer}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 1 }}
+            >
+              <motion.a 
+                href="#" 
+                className="text-gray-400 hover:text-white transition-colors"
+                variants={socialLinkVariants}
+                whileHover="hover"
+              >
                 LINKEDIN <span className="text-lg">↗</span>
-              </a>
-              <a href="https://github.com/akram-999" className="text-gray-400 hover:text-white transition-colors">
+              </motion.a>
+              <motion.a 
+                href="https://github.com/akram-999" 
+                className="text-gray-400 hover:text-white transition-colors"
+                variants={socialLinkVariants}
+                whileHover="hover"
+              >
                 GITHUB <span className="text-lg">↗</span>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              </motion.a>
+              <motion.a 
+                href="#" 
+                className="text-gray-400 hover:text-white transition-colors"
+                variants={socialLinkVariants}
+                whileHover="hover"
+              >
                 INSTAGRAM <span className="text-lg">↗</span>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              </motion.a>
+              <motion.a 
+                href="#" 
+                className="text-gray-400 hover:text-white transition-colors"
+                variants={socialLinkVariants}
+                whileHover="hover"
+              >
                 GMAIL <span className="text-lg">↗</span>
-              </a>
-            </div>
-          </div>
+              </motion.a>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import About from "@/components/About/About";
 import Available from "@/components/available/Available";
 import Hero from "@/components/Hero/Hero";
 
@@ -11,6 +12,7 @@ export default function Home() {
     
    <Hero/>
    <Skils/>
+   <About/>
    <Services/>
    <TestimonialsSectionDemo/>
    <Available />

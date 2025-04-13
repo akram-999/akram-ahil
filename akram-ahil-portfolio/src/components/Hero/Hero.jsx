@@ -230,6 +230,8 @@ export default function Hero() {
                 className="text-gray-400 hover:text-white transition-colors"
                 variants={socialLinkVariants}
                 whileHover="hover"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 GMAIL <span className="text-lg">↗</span>
               </motion.a>

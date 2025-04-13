@@ -256,7 +256,9 @@ export default function Page() {
               transition={{ delay: 1, duration: 0.5 }}
             >
               <motion.a 
-                href="#" 
+                href="https://www.linkedin.com/in/akram-ahil-a5a034285/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
                 whileHover={{ scale: 1.2, transition: { duration: 0.2 } }}
               >
@@ -265,7 +267,9 @@ export default function Page() {
                 </svg>
               </motion.a>
               <motion.a 
-                href="#" 
+                href="https://github.com/akram-999" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
                 whileHover={{ scale: 1.2, transition: { duration: 0.2 } }}
               >

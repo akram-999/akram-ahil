@@ -1,6 +1,6 @@
 'use client';
 
-import { MoveRight } from "lucide-react";
+import { MoveRight, Download } from "lucide-react";
 import Image from "next/image";
 import './Hero.css';
 import { motion } from "framer-motion";
@@ -49,6 +49,23 @@ export default function Hero() {
       color: "#ffffff",
       transition: { duration: 0.2 }
     }
+  };
+
+  const handleDownloadCV = () => {
+    // The path to your CV file in the public directory
+    const cvUrl = '/Akram-Ahil-Resume.pdf';
+    
+    // Create a temporary anchor element
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.setAttribute('download', 'Akram-Ahil-Resume.pdf');
+    document.body.appendChild(link);
+    
+    // Trigger the download
+    link.click();
+    
+    // Clean up
+    document.body.removeChild(link);
   };
 
   return (
@@ -156,6 +173,7 @@ export default function Hero() {
             </motion.p>
 
             <motion.button 
+              onClick={handleDownloadCV}
               className="bg-white text-black px-8 py-3 rounded-full 
                 hover:bg-[#9FE870] transition-all duration-300 flex items-center gap-2"
               variants={fadeInUp}
@@ -163,13 +181,13 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               $ npm install Resume
-              {/* <motion.span
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.2, duration: 0.5 }}
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
               >
-                <MoveRight className="w-5 h-5" />
-              </motion.span> */}
+                <Download className="w-5 h-5 ml-2" />
+              </motion.span>
             </motion.button>
 
             <motion.div 

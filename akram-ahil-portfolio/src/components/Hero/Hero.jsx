@@ -198,7 +198,9 @@ export default function Hero() {
               transition={{ delay: 1 }}
             >
               <motion.a 
-                href="#" 
+                href="https://www.linkedin.com/in/akram-ahil-a5a034285/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
                 variants={socialLinkVariants}
                 whileHover="hover"
@@ -207,22 +209,24 @@ export default function Hero() {
               </motion.a>
               <motion.a 
                 href="https://github.com/akram-999" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
                 variants={socialLinkVariants}
                 whileHover="hover"
               >
                 GITHUB <span className="text-lg">↗</span>
               </motion.a>
-              <motion.a 
+              {/* <motion.a 
                 href="#" 
                 className="text-gray-400 hover:text-white transition-colors"
                 variants={socialLinkVariants}
                 whileHover="hover"
               >
                 INSTAGRAM <span className="text-lg">↗</span>
-              </motion.a>
+              </motion.a> */}
               <motion.a 
-                href="#" 
+                href="mailto:akram.ahil123@gmail.com?subject=Inquiry from Portfolio Website&body=Hi Akram, I visited your portfolio and would like to connect with you."
                 className="text-gray-400 hover:text-white transition-colors"
                 variants={socialLinkVariants}
                 whileHover="hover"

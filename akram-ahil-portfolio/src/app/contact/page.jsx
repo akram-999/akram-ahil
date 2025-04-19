@@ -110,7 +110,7 @@ export default function Page() {
 
   return (
     <motion.div 
-      className="px-4 py-12 md:m-28 text-white md:p-8 bg-black"
+      className="px-4 py-12 md:m-28 text-white md:p-8 "
       initial="hidden"
       animate="visible"
       variants={containerVariants}

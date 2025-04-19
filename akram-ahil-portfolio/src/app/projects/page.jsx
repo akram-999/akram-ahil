@@ -97,26 +97,26 @@ export default function Page() {
   };
 
   return (
-    <main className="min-h-screen p-8 m-20">
+    <main className="min-h-screen px-4 py-8 md:p-8 lg:m-20">
       {/* Header Section */}
       <motion.div 
-        className="mb-12"
+        className="mb-8 md:mb-12"
         initial="hidden"
         animate="visible"
         variants={headerVariants}
       >
         <motion.div 
-          className="flex items-center gap-2 text-[#9FE870]"
+          className="flex items-center gap-2 text-[#9FE870] mb-4"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
           <span className="text-2xl">✧</span>
-          <span className="uppercase tracking-wider">MY WORK</span>
+          <span className="uppercase tracking-wider text-sm md:text-base">MY WORK</span>
         </motion.div>
         
         <motion.h1 
-          className="text-5xl font-bold mb-8"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -126,14 +126,14 @@ export default function Page() {
         
         {/* Filter Tabs */}
         <motion.div 
-          className="flex items-center gap-4 mb-12"
+          className="flex flex-wrap items-center gap-2 md:gap-4 mb-8 md:mb-12"
           variants={filterVariants}
         >
           {['All', 'Development', 'Design'].map((filter) => (
             <motion.button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 rounded-full transition-colors ${
+              className={`px-3 py-1.5 md:px-4 md:py-2 rounded-full text-sm md:text-base transition-colors ${
                 activeFilter === filter 
                   ? 'bg-gray-800 text-white' 
                   : 'hover:bg-gray-800 text-gray-400'
@@ -149,7 +149,7 @@ export default function Page() {
 
       {/* Projects Grid */}
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -163,7 +163,7 @@ export default function Page() {
               animate="visible"
               exit="exit"
               layout
-              className="rounded-3xl overflow-hidden bg-gray-900 cursor-pointer"
+              className="rounded-2xl md:rounded-3xl overflow-hidden bg-gray-900 cursor-pointer"
               whileHover={{ 
                 scale: 1.02,
                 transition: { duration: 0.3 }
@@ -184,9 +184,9 @@ export default function Page() {
                   whileHover={{ scale: 1.1 }}
                 />
               </motion.div>
-              <div className="p-6">
+              <div className="p-4 md:p-6">
                 <motion.h3 
-                  className="text-2xl font-semibold mb-2"
+                  className="text-lg md:text-2xl font-semibold mb-1 md:mb-2"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2 }}
@@ -194,7 +194,7 @@ export default function Page() {
                   {project.title}
                 </motion.h3>
                 <motion.div 
-                  className="flex justify-between items-center text-gray-400"
+                  className="flex justify-between items-center text-gray-400 text-sm md:text-base"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.4, delay: 0.3 }}

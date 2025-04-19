@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react'
+import Image from 'next/image'
 import './Skills.css'
 
 export default function Skils() {
@@ -31,14 +34,26 @@ export default function Skils() {
         <div className="skills-track">
           {skills.map((skill, index) => (
             <div key={index} className="skill-item">
-              <img src={skill.icon} alt={skill.name} />
+              <Image 
+                src={skill.icon} 
+                alt={skill.name} 
+                width={24} 
+                height={24}
+                unoptimized={true}
+              />
               <span>{skill.name}</span>
             </div>
           ))}
           
           {skills.map((skill, index) => (
             <div key={`duplicate-${index}`} className="skill-item">
-              <img src={skill.icon} alt={skill.name} />
+              <Image 
+                src={skill.icon} 
+                alt={skill.name} 
+                width={24} 
+                height={24}
+                unoptimized={true}
+              />
               <span>{skill.name}</span>
             </div>
           ))}

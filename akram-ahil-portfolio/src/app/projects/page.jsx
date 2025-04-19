@@ -100,7 +100,7 @@ export default function Page() {
     <main className="min-h-screen px-4 py-8 md:p-8 lg:m-20">
       {/* Header Section */}
       <motion.div 
-        className="mb-8 md:mb-12"
+        className="mt-12 md:mb-12"
         initial="hidden"
         animate="visible"
         variants={headerVariants}
@@ -111,7 +111,7 @@ export default function Page() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-2xl">✧</span>
+          <span className="text-xl md:text-2xl inline-block">✧</span>
           <span className="uppercase tracking-wider text-sm md:text-base">MY WORK</span>
         </motion.div>
         

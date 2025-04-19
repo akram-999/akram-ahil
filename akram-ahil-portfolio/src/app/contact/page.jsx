@@ -110,7 +110,7 @@ export default function Page() {
 
   return (
     <motion.div 
-      className="px-4 py-12 md:m-28 text-white md:p-8 "
+      className="px-4 py-12 mt-12 md:m-28 text-white md:p-8 "
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -120,7 +120,7 @@ export default function Page() {
         variants={itemVariants}
       >
         <motion.span 
-          className="text-2xl"
+          className="text-xl md:text-2xl inline-block"
           animate={{ rotate: [0, 15, -15, 0] }}
           transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
         >

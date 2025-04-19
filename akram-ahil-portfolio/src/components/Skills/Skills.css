@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.5rem 3rem 0.5rem 1rem;
+  padding: 0.5rem 2rem 0.5rem 1rem;
   text-align: center;
   background: #1a1a1a;
   border-radius: 9999px;
@@ -37,10 +37,21 @@
   border-color: #404040;
 }
 
-.skill-item img {
+.skill-icon-container {
   width: 24px;
   height: 24px;
-  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-item img,
+.skill-item span img {
+  width: 24px !important;
+  height: 24px !important;
+  object-fit: contain !important;
+  max-width: none !important;
+  position: relative !important;
 }
 
 .skill-item span {
@@ -71,14 +82,20 @@
   
   .skill-item {
     display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 2rem 0.5rem 1rem;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1.6rem 0.5rem 1rem;
   }
   
-  .skill-item img {
+  .skill-icon-container {
     width: 20px;
     height: 20px;
+  }
+  
+  .skill-item img,
+  .skill-item span img {
+    width: 20px !important;
+    height: 20px !important;
   }
   
   .skill-item span {

@@ -11,7 +11,7 @@ export default function Skils() {
     { name: 'photoshop', icon: '/skils/photoshop.svg' },
     { name: 'react', icon: '/skils/react.svg' },
     { name: 'next', icon: '/skils/nextjs.svg' },
-    { name: 'postgre', icon: '/skils/postgre.svg' },
+    { name: 'postgre', icon: '/skils/Postgre.svg' },
     { name: 'mysql', icon: '/skils/mysql.svg' },
     { name: 'docker', icon: '/skils/docker.svg'},
     { name: 'express', icon: '/skils/express.svg' },
@@ -34,26 +34,38 @@ export default function Skils() {
         <div className="skills-track">
           {skills.map((skill, index) => (
             <div key={index} className="skill-item">
-              <Image 
-                src={skill.icon} 
-                alt={skill.name} 
-                width={24} 
-                height={24}
-                unoptimized={true}
-              />
+              <div className="skill-icon-container">
+                <Image 
+                  src={skill.icon} 
+                  alt={skill.name} 
+                  width={24} 
+                  height={24}
+                  unoptimized={true}
+                  onError={(e) => {
+                    // Fall back to text if image fails to load
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </div>
               <span>{skill.name}</span>
             </div>
           ))}
           
           {skills.map((skill, index) => (
             <div key={`duplicate-${index}`} className="skill-item">
-              <Image 
-                src={skill.icon} 
-                alt={skill.name} 
-                width={24} 
-                height={24}
-                unoptimized={true}
-              />
+              <div className="skill-icon-container">
+                <Image 
+                  src={skill.icon} 
+                  alt={skill.name} 
+                  width={24} 
+                  height={24}
+                  unoptimized={true}
+                  onError={(e) => {
+                    // Fall back to text if image fails to load
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </div>
               <span>{skill.name}</span>
             </div>
           ))}

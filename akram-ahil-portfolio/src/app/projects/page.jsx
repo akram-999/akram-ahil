@@ -177,7 +177,7 @@ export default function Page() {
                 <motion.img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="mt-20 "
                   initial={{ scale: 1.1 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.7 }}

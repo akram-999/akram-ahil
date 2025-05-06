@@ -46,7 +46,7 @@ export default function TestimonialsSectionDemo() {
     <div className="testimonials-section">
       <div className="testimonials-header">
         <h2>Trusted by developers worldwide</h2>
-        <p>Join thousands of developers who are already building the future with our AI platform</p>
+        {/* <p>Join thousands of developers who are already building the future with our AI platform</p> */}
       </div>
       
       <div className="testimonials-container">

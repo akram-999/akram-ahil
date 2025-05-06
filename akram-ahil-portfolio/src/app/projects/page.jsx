@@ -6,16 +6,16 @@ export default function Page() {
   const [activeFilter, setActiveFilter] = useState('All');
   const projects = [
     {
-      title: "Aora",
+      title: "Notes App",
       category: "Development",
       year: "2024",
-      image: "https://devrajchatribin.com/_next/image?url=%2Fprojects%2Faora.webp&w=1200&q=100", 
+      image: "/projects/notes-app.png", 
     },
     {
-      title: "Code Screenshot",
+      title: "DBSYS SERVICES",
       category: "Development",
-      year: "2024",
-      image: "https://devrajchatribin.com/_next/image?url=%2Fprojects%2Fcodescreenshot.webp&w=1200&q=100", 
+      year: "2025",
+      image: "/projects/dbsys.png", 
     },
     {
       title: "Code Screenshot",

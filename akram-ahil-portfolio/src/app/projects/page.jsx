@@ -30,20 +30,18 @@ export default function Page() {
       github: "https://github.com/akram-999/blog-app"
     },
     {
-      title: "Code Screenshot",
+      title: "Hisko",
       category: "Design",
-      year: "2024",
-      image: "https://devrajchatribin.com/_next/image?url=%2Fprojects%2Fcodescreenshot.webp&w=1200&q=100",
-      languages: ["Figma", "Photoshop"],
-      github: "https://github.com/akram-999/code-screenshot"
+      year: "2025",
+      image: "/projects/logo1.png",
+      languages: ["Illustrator"],
     },
     {
-      title: "Code Screenshot",
+      title: "ASTRA DEV TEAM",
       category: "Design",
-      year: "2024",
-      image: "https://devrajchatribin.com/_next/image?url=%2Fprojects%2Fochidesign.webp&w=1200&q=100",
-      languages: ["Figma", "Illustrator"],
-      github: "https://github.com/akram-999/ochidesign"
+      year: "2025",
+      image: "/projects/logo2.png",
+      languages: [ "Illustrator"],
     },
   ];
 
